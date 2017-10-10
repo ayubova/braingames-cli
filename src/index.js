@@ -11,8 +11,8 @@ export const brainEven = () => {
   console.log('Welcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no".');
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);  
-  for (let i = 1; i <= 3; i++) {
+  console.log(`Hello, ${userName}!`);
+  for (let i = 1; i <= 3; i + 1) {
     const number = Math.floor(Math.random() * 1000);
     const userAnswer = readlineSync.question(`Question: ${number}\nYour answer: `);
     const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
