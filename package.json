@@ -26,9 +26,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "*",
+    "babel-eslint": "^8.0.1",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*",
-    "babel-eslint": "*",
     "eslint": "*",
     "eslint-config-airbnb-base": "*",
     "eslint-plugin-import": "*"
