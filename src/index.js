@@ -7,16 +7,13 @@ export const brainGames = () => {
 };
 
 
-export const brainEven = () => {
+export default (rules, question, correctAnswer) => {
   console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
+  console.log(rules);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   for (let i = 1; i <= 3; i += 1) {
-    const question = Math.floor(Math.random() * 1000);
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    const isEven = num => num % 2 === 0;
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
