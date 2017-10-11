@@ -2,8 +2,9 @@
 import readlineSync from 'readline-sync';
 import run from '..';
 
+
 export default () => {
-  const rulesCalc = 'What is the result of the expression?'; // в общий модуль как переменную rules
+  const rulesCalc = 'What is the result of the expression?\n';
   const num1 = Math.floor(Math.random() * 10);
   const num2 = Math.floor(Math.random() * 10);
   const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
