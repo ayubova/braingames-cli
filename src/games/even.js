@@ -1,5 +1,4 @@
 
-import readlineSync from 'readline-sync';
 import run from '..';
 
 export default () => {
