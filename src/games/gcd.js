@@ -6,7 +6,7 @@ const findGcd = (a, b) => {
   if (!b) {
     return a;
   }
-  return Math.abs(findGcd(b, a % b));
+  return findGcd(b, a % b);
 };
 
 export default () => {
