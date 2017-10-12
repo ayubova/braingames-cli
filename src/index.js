@@ -7,16 +7,15 @@ export const brainGames = () => {
 };
 
 
-const play = (rulesCalc, questionCalc, correctAnswerCalc) => {
+export default (rules, args) => {
   console.log('Welcome to the Brain Games!');
-  console.log(rulesCalc);
+  console.log(rules);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
   for (let i = 1; i <= 3; i += 1) {
-    const question = questionCalc;
+    const [question, correctAnswer] = args();
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
     console.log('Your answer: ');
-    const correctAnswer = correctAnswerCalc;
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
@@ -25,6 +24,3 @@ const play = (rulesCalc, questionCalc, correctAnswerCalc) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-
-export default (rules, question, correctAnswer) =>
-  play(rules, question, correctAnswer);
