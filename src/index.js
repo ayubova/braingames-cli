@@ -15,7 +15,6 @@ export default (rules, args) => {
   for (let i = 1; i <= 3; i += 1) {
     const [question, correctAnswer] = args();
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    console.log('Your answer: ');
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
