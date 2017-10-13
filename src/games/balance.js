@@ -1,7 +1,7 @@
 import run from '..';
 import getRandom from '../random';
 
-const rules = 'Balance the given number.';
+const rule = 'Balance the given number.';
 
 const balanceNumber = (number) => {
   const integers = String(number).split('').sort().map(value => Number(value));
@@ -21,5 +21,5 @@ export default () => {
     const correctAnswer = String(balanceNumber(num));
     return [question, correctAnswer];
   };
-  return run(rules, gameArgs);
+  return run(rule, gameArgs);
 };

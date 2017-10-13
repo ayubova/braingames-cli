@@ -1,7 +1,7 @@
 import run from '..';
 import getRandom from '../random';
 
-const rules = 'What number is missing in this progression?';
+const rule = 'What number is missing in this progression?';
 
 const generateProgression = (first, d) => {
   let result = [first];
@@ -24,5 +24,5 @@ export default () => {
     return [question, String(correctAnswer)];
   };
 
-  return run(rules, gameArgs);
+  return run(rule, gameArgs);
 };
