@@ -3,16 +3,17 @@ import getRandom from '../random';
 
 const rule = 'Answer "yes" if number is prime otherwise answer "no".';
 
-const isPrime = (num) => {
-  if (num < 2) {
+const isPrime = (number) => {
+  if (number < 2) {
     return false;
   }
-  for (let i = 2; i < num / 2; i += 1) {
-    if (num % i === 0) {
-      return false;
+  const iter = (num, divisor) => {
+    if (num / 2 < divisor) {
+      return true;
     }
-  }
-  return true;
+    return num % divisor === 0 ? false : iter(num, divisor + 1);
+  };
+  return iter(number, 2);
 };
 
 export default () => {
