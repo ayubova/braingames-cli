@@ -3,11 +3,12 @@ import getRandom from '../random';
 
 const rule = 'What number is missing in this progression?';
 
-const generateProgression = (first, difference) => {
+const generateProgression = (first) => {
+  const delta = getRandom(10);
   let result = [first];
   const maxLength = 10;
   for (let i = 1; i < maxLength; i += 1) {
-    result = result.concat(result[result.length - 1] + difference);
+    result = result.concat(result[result.length - 1] + delta);
   }
   const missingIndex = getRandom(9);
   const missingElement = result[missingIndex];
@@ -18,9 +19,7 @@ const generateProgression = (first, difference) => {
 export default () => {
   const gameArgs = () => {
     const firstElement = getRandom(100);
-    const delta = getRandom(10);
-
-    const [correctAnswer, question] = generateProgression(firstElement, delta);
+    const [correctAnswer, question] = generateProgression(firstElement);
 
     return [question, String(correctAnswer)];
   };
