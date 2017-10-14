@@ -7,13 +7,16 @@ const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  const iter = (num, divisor) => {
-    if (num / 2 < divisor) {
+  const iter = (divisor) => {
+    if (number / 2 < divisor) {
       return true;
     }
-    return num % divisor === 0 ? false : iter(num, divisor + 1);
+    if (number % divisor === 0) {
+      return false;
+    }
+    return iter(divisor + 1);
   };
-  return iter(number, 2);
+  return iter(2);
 };
 
 export default () => {
